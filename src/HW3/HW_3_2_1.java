@@ -1,3 +1,5 @@
+package HW3;
+
 public class HW_3_2_1 {
     public static void main(String[] args) {
 

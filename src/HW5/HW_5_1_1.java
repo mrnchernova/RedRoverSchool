@@ -1,16 +1,18 @@
+package HW5;
+
 /**
  * Дан массив:
  * int[] array = {9, 2, 6, 4, 5, 12, 7, 8, 6};
- * необходимо увеличить все значения массива на 15.
+ * необходимо вывести сумму всех значений массива.
  */
-
-public class HW_4_3 {
+public class HW_5_1_1 {
     public static void main(String[] args) {
         int[] array = {9, 2, 6, 4, 5, 12, 7, 8, 6};
+        int n = 0;
         for (int i = 0; i < array.length; i++) {
-            array[i] = array[i] + 15;
-            System.out.print(array[i] + " ");
+            n = n + array[i];
         }
+        System.out.println(n);
 
     }
 }
