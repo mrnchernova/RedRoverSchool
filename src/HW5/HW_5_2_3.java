@@ -1,3 +1,5 @@
+package HW5;
+
 /**
  * Дана строка:
  * String s = “Посмотрите как Рите нравится ритм”;
@@ -6,6 +8,16 @@
  */
 public class HW_5_2_3 {
     public static void main(String[] args) {
+        String s = "Посмотрите как Рите нравится ритм";
+        s = s.toLowerCase();
+        String substr = "рит";
 
+
+        for (int i = 0; i < s.length()-substr.length(); i++) {
+            if (s.substring(i, i + substr.length()).equals(substr)){
+                System.out.println(i);
+            }
+
+        }
     }
 }
