@@ -14,4 +14,10 @@ package HW6;
  */
 
 public class Main3 {
+
+    Employee m1 = new Employee();
+
+
+
+
 }
