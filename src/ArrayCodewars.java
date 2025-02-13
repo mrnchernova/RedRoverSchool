@@ -22,8 +22,9 @@ public class ArrayCodewars {
                 }
             }
             if (!match) {
+                int[] newArray = new int[count];
                 count++;
-                int[] newArray = {array[i]};
+//                int[] newArray = {array[i]};
             }
         }
 
