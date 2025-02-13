@@ -36,4 +36,6 @@ public class HW_7_1 {
         System.out.println(a/b);
     }
 
+
+
 }
