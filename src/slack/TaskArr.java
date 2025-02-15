@@ -19,3 +19,5 @@ public class TaskArr {
         System.out.println(Arrays.toString(array));
     }
 }
+
+//test
