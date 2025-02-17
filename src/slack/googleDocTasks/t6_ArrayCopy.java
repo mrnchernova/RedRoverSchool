@@ -1,4 +1,7 @@
 package slack.googleDocTasks;
+
+import java.util.Arrays;
+
 /*
 скопировать содержимое массивов firstArray и secondArray в один массив resultArray.
 Массив firstArray должен быть в начале нового массива resultArray, а secondArray — после него.
@@ -10,12 +13,17 @@ public class t6_ArrayCopy {
     public static int[] resultArray;
 
     public static void main(String[] args) {
-        resultArray = new int[firstArray.length+ secondArray.length];
+        resultArray = new int[firstArray.length + secondArray.length];
 
-        for (int i = 0; i < resultArray.length; i++) {
-
-
+        System.out.println(resultArray.length);
+        for (int i = 0; i < firstArray.length; i++) {
+            resultArray[i] = firstArray[i];
         }
+        int j = 0;
+        for (int i = firstArray.length; i < resultArray.length; i++) {
+            resultArray[i] = secondArray[j++];
+        }
+        System.out.println(Arrays.toString(resultArray));
 
     }
 }
