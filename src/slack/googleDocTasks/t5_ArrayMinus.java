@@ -1,13 +1,13 @@
-package slack;
+package slack.googleDocTasks;
 
 import java.util.Arrays;
 
-/**
- * Измени знак элемента массива array на противоположный,
- * если значение этого элемента чётное.
- * Пример массива : {-1, 2, 3, -4, -5}
+/*
+Измени знак элемента массива array на противоположный,
+если значение этого элемента чётное.
+Пример массива : {-1, 2, 3, -4, -5}
  */
-public class TaskArr {
+public class t5_ArrayMinus {
     public static void main(String[] args) {
         int[] array = {-1, 2, 3, -4, -5};
         System.out.println(Arrays.toString(array));
@@ -19,4 +19,3 @@ public class TaskArr {
         System.out.println(Arrays.toString(array));
     }
 }
-
