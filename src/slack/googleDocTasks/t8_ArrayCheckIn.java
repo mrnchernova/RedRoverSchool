@@ -1,5 +1,7 @@
 package slack.googleDocTasks;
 
+import java.util.Arrays;
+
 /*
         Вам будет предоставлен массив arr и значение x. Всё, что вам нужно сделать, — это проверить,
         содержит ли предоставленный массив это значение.
@@ -9,30 +11,19 @@ package slack.googleDocTasks;
 public class t8_ArrayCheckIn {
     public static void main(String[] args) {
 
-        Object[] array = {"qaz", "qwe", "asd"};
-//        Object[] array = {11, 22, 33};
-        Object x = "p";
+//        Object[] array = {"qaz", "qwe", "asd"};
+        Object[] array = {11, 22, 33};
+        Object x = 22;
 
-        if (x.getClass().getSimpleName() == array[0].getClass().getSimpleName()){
-            System.out.println("equals");
-
-            if (x instanceof String){
-                System.out.println("x str");
+        if (x.getClass().getSimpleName() == array[0].getClass().getSimpleName()) {
+            for (int i = 0; i < array.length; i++) {
+                if (x == array[i]) {
+                    System.out.println("match! \n" + x + " in " + Arrays.toString(array));
+                    break;
+                }
             }
-
-            if (x instanceof Integer){
-                System.out.println("x int");
-            }
-
-            if (x instanceof Double){
-                System.out.println("x double");
-            }
-
+        } else {
+            System.out.println("the values are not equal");
         }
-        else{
-            System.out.println("not equal");
-        }
-
-//        int b = (int)  '4';    System.out.print(b); //978 номер символа
     }
 }
