@@ -22,7 +22,6 @@ public class HW_5_3_1 {
             n--;
             System.out.println();
         }
-
-        }
     }
+}
 
