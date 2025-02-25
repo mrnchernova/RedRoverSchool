@@ -31,11 +31,10 @@ public class Main {
         manager1.workers = 2;
 
 
-
         Month[] employee1Month = {monthArray[0],monthArray[1]};
         employee1.getSalary(employee1Month);
 
-        Month[] manager1Month = {monthArray[0],monthArray[1]};
-        manager1.getSalary(manager1Month);
+//        Month[] manager1Month = {monthArray[0],monthArray[1]};
+//        manager1.getSalary(manager1Month);
     }
 }

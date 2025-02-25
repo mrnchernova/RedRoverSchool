@@ -11,19 +11,8 @@ public class Month {
         this.workingDays = workingDays;
     }
 
-
-
     @Override
     public String toString() {
-        return "Month{" +
-                "title='" + title + '\'' +
-                ", days=" + days +
-                ", workingDays=" + workingDays +
-                '}';
-    }
-
-
-    public String prettyOutput() {
         return "Month{" +
                 "title='" + title + '\'' +
                 ", days=" + days +
