@@ -8,10 +8,11 @@ public class Employee {
     String sex;
     double salary;
 
-    public Employee(int id) {
+    public Employee(int id, String name, double salary) {
         this.id = id;
+        this.name = name;
+        this.salary = salary;
     }
-
 
 
     public void getSalary(Month[] monthArray) {
@@ -40,6 +41,17 @@ public class Employee {
                 "  sex=" + sex + "\n" +
                 "  salary=" + salary + "\n";
 
+    }
+
+    public Manager convertToManager(int numberOfSubordinates) {
+        Manager manager = new Manager(id);
+        manager.setName(this.name);
+        manager.setAge(this.age);
+        manager.setSex(this.sex);
+        manager.setSalary(this.salary);
+        manager.setWorkers(numberOfSubordinates);
+
+        return manager;
     }
 
 

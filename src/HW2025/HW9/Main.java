@@ -34,30 +34,31 @@ public class Main {
 //                new Month("December", 31, 23)
 //        };
 
-//        Person male = new Person("male");
-//        Person female = new Person("female");
-        Employee employee1 = new Employee(001);
-        employee1.setName("Max");
+        Employee employee1 = new Employee(1, "Max", 70);
         employee1.age = 20;
         employee1.sex = "male";
-        employee1.salary = 70;
 
-        Manager manager1 = new Manager(002);
-        manager1.setName("MaxManager");
-        manager1.age = 40;
-        manager1.sex = "male";
-        manager1.salary = 70;
-        manager1.workers = 2;
+        Manager manager1 = new Manager(2);
+        manager1.setName("Vika");
+        manager1.setAge(40);
+        manager1.setSex("female");
+        manager1.setSalary(70);
+        manager1.setWorkers(2);
 
 
         Month[] employee1Month = {monthArray[0], monthArray[1]};
         System.out.println(employee1.toString());
-
         employee1.getSalary(employee1Month);
 
-//        Month[] manager1Month = {monthArray[0],mo
-//        nthArray[1]};
-//        System.out.println(manager1.toString());
-//        manager1.getSalary(manager1Month);
+        System.out.println("---------------------------");
+
+        Month[] manager1Month = {monthArray[0],monthArray[1]};
+        System.out.println(manager1.toString());
+        manager1.getSalary(manager1Month);
+
+        System.out.println("---------------------------");
+
+        System.out.println(employee1.convertToManager(20));
+        employee1.convertToManager(20).getSalary(employee1Month);
     }
 }
