@@ -2,55 +2,68 @@ package HW2025.HW10;
 
 public class Employee {
 
-    private int id;
-    private String name;
-    int age;
-    String sex;
-    double salary;
+    private final String name;
+    private int age;
+    private String sex;
+    private final double dailySalary;
 
-    public Employee(int id, String name, double salary) {
-        this.id = id;
+
+    public Employee(String name, int age, String sex, double dailySalary) {
         this.name = name;
-        this.salary = salary;
+        this.age = age;
+        this.sex = sex;
+        this.dailySalary = dailySalary;
     }
 
+    public Employee(String name, double dailySalary) {
+        this.name = name;
+        this.dailySalary = dailySalary;
+    }
 
-    public void getSalary(Month[] monthArray) {
-        for (int i = 0; i < monthArray.length; i++) {
-            double monthSalary = salary;
-            monthSalary = monthSalary * monthArray[i].getWorkingDays();
-            System.out.println(monthArray[i].getTitle() + " = " + monthSalary);
+     public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public double getDailySalary() {
+        return dailySalary;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    //    public void getSalary(Month[] monthArray) {
+//        for (int i = 0; i < monthArray.length; i++) {
+//            double monthSalary = salary;
+//            monthSalary = monthSalary * monthArray[i].getWorkingDays();
+//            System.out.println(monthArray[i].getTitle() + " = " + monthSalary);
+//        }
+//    }
+
+
+    public double getSalary(Month[] monthArray) {
+        double salary = 0;
+        for (Month month: monthArray) {
+            salary +=month.getWorkingDays() * dailySalary;
         }
+        return salary;
     }
 
-    public String getName() {
-        if (sex.equals("male")) {
-            return "Mr. " + name;
-        } else if (sex.equals("female")) {
-            return "Mrs. " + name;
-        } else {
-            return name;
-        }
-    }
-
-    @Override
-    public String toString() {
-        return "Employee: " + "\n" +
-                "  name=" + name + "\n" +
-                "  age=" + age + "\n" +
-                "  sex=" + sex + "\n" +
-                "  salary=" + salary + "\n";
-
-    }
 
     public Manager convertToManager(int numberOfSubordinates) {
-        Manager manager = new Manager(id);
-        manager.setName(this.name);
-        manager.setAge(this.age);
-        manager.setSex(this.sex);
-        manager.setSalary(this.salary);
-        manager.setWorkers(numberOfSubordinates);
-
+        Manager manager = new Manager(name, age, sex, dailySalary, numberOfSubordinates);
         return manager;
     }
 

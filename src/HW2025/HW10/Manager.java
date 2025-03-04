@@ -1,75 +1,67 @@
 package HW2025.HW10;
 
+
 public class Manager {
-    private int id=0;
-    private String name;
+    private final String name;
     private int age;
     private String sex;
-    private double salary;
+    private final double dailySalary;
     private int workers;
 
-    public Manager(int id) {
-        this.id = id++;
+
+    public Manager(String name, double salary) {
+        this.name = name;
+        this.dailySalary = salary;
+    }
+
+    public Manager(String name, int age, String sex, double salary, int workers) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.dailySalary = salary;
+        this.workers = workers;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getAge() {
         return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public void getSalary(Month[] monthArray) {
-        for (int i = 0; i < monthArray.length; i++) {
-            double monthSalary = salary;
-            monthSalary *= monthArray[i].getWorkingDays();
-            double extra = (monthSalary * 1 / 100) * workers;
-            monthSalary += extra;
-            System.out.println(monthArray[i].getTitle() + " = " + monthSalary);
-        }
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public double getDailySalary() {
+        return dailySalary;
     }
 
     public int getWorkers() {
         return workers;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
     public void setWorkers(int workers) {
         this.workers = workers;
     }
 
-
-
-
-
-    @Override
-    public String toString() {
-        return "Manager: " + "\n" +
-                "  name=" + name + "\n" +
-                "  age=" + age + "\n" +
-                "  sex=" + sex + "\n" +
-                "  salary=" + salary + "\n" +
-                "  workers=" + workers + "\n";
-
+    public double getSalary(Month[] monthArray) {
+        double salary = 0;
+        for (Month month : monthArray) {
+            double extra = month.getWorkingDays() * dailySalary * 0.01 * workers;
+            salary += month.getWorkingDays() * dailySalary + extra;
+        }
+        return salary;
     }
+
+
 }
