@@ -16,4 +16,30 @@ public class MonthUtils {
 //        monthArray[10] = new Month("November", 30, 20);
 //        monthArray[11] = new Month("December", 31, 23);
 
+    public static final Month JAN = makeMonth("January", 31, 23);
+    public static final Month FEB = makeMonth("February", 28, 20);
+    public static final Month MAR = makeMonth("March", 31, 21);
+    public static final Month APR = makeMonth("April", 30, 22);
+    public static final Month MAY = makeMonth("May", 31, 22);
+    public static final Month JUN = makeMonth("June", 30, 21);
+    public static final Month JUL = makeMonth("July", 31, 23);
+    public static final Month AUG = makeMonth("August", 31, 21);
+    public static final Month SEP = makeMonth("September", 30, 22);
+    public static final Month OCT = makeMonth("October", 31, 23);
+    public static final Month NOV = makeMonth("November", 30, 20);
+    public static final Month DEC = makeMonth("December", 31, 23);
+
+
+
+    public static final Month[] FULL_YEAR = {JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC};
+    public static final Month[] H1 = {JAN, FEB, MAR, APR, MAY, JUN};
+    public static final Month[] Q1 = {APR, MAY, JUN};
+
+    private static Month makeMonth(String title, int days, int workingDays) {
+        Month month = new Month();
+        month.title = title;
+        month.days = days;
+        month.workingDays = workingDays;
+        return month;
+    }
 }

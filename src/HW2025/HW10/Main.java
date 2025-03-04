@@ -1,4 +1,4 @@
-package HW2025.HW9;
+package HW2025.HW10;
 
 public class Main {
 

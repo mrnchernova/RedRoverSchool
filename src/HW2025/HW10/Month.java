@@ -1,9 +1,9 @@
-package HW2025.HW8;
+package HW2025.HW10;
 
 public class Month {
-    String title;
-    int days;
-    int workingDays;
+    private String title;
+    private int days;
+    private int workingDays;
 
     public Month(String title, int days, int workingDays) {
         this.title = title;
@@ -11,8 +11,22 @@ public class Month {
         this.workingDays = workingDays;
     }
 
-    public Month() {
+
+
+    public String getTitle() {
+        return title;
     }
+
+    public int getDays() {
+        return days;
+    }
+
+    public int getWorkingDays() {
+        return workingDays;
+    }
+
+
+
 
     @Override
     public String toString() {

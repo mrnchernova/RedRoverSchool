@@ -4,15 +4,24 @@ public class Employee {
     String name;
     int age;
     String sex;
-    double salary;
+    double dailySalary;
 
 
-    public void getSalary(Month[] monthArray) {
-        for (int i = 0; i < monthArray.length; i++) {
-            double monthSalary = salary;
-            monthSalary = monthSalary * monthArray[i].workingDays;
-            System.out.println(monthArray[i].title + " = " + monthSalary);
+//    public void getSalary(Month[] monthArray) {
+//        for (int i = 0; i < monthArray.length; i++) {
+//            double monthSalary = dailySalary;
+//            monthSalary = monthSalary * monthArray[i].workingDays;
+//            System.out.println(monthArray[i].title + " = " + monthSalary);
+//        }
+//    }
+
+
+    public double getSalary(Month[] monthArray) {
+        double salary = 0;
+        for (Month month: monthArray) {
+            salary +=month.workingDays * dailySalary;
         }
+        return salary;
     }
 
     public String getName() {
@@ -31,7 +40,7 @@ public class Employee {
                 "  name=" + name + "\n" +
                 "  age=" + age + "\n" +
                 "  sex=" + sex + "\n" +
-                "  salary=" + salary + "\n";
+                "  salary=" + dailySalary + "\n";
 
     }
 }
