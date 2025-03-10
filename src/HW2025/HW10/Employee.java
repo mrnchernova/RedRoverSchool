@@ -20,7 +20,7 @@ public class Employee {
         this.dailySalary = dailySalary;
     }
 
-     public String getName() {
+    public String getName() {
         return name;
     }
 
@@ -55,8 +55,8 @@ public class Employee {
 
     public double getSalary(Month[] monthArray) {
         double salary = 0;
-        for (Month month: monthArray) {
-            salary +=month.getWorkingDays() * dailySalary;
+        for (Month month : monthArray) {
+            salary += month.getWorkingDays() * dailySalary;
         }
         return salary;
     }

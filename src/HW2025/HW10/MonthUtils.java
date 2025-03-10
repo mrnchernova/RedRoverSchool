@@ -20,6 +20,7 @@ public class MonthUtils {
     public static final Month[] FULL_YEAR = {JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC};
     public static final Month[] H1 = {JAN, FEB, MAR, APR, MAY, JUN};
     public static final Month[] Q1 = {APR, MAY, JUN};
+    public static final Month[] ONE = {MAY};
 
 
 

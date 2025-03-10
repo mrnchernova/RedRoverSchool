@@ -1,30 +1,38 @@
 package slack.codewars;
 
+import java.util.Arrays;
+
 public class TempCodewars {
     public static void main(String[] args) {
-        int s = 10;
-        System.out.println(mpgToKPM(s));
+
+        System.out.println(Arrays.toString(digitize("I   love arrays they are my favorite")));
+
     }
 
-    /*
 
-Sometimes, I want to quickly be able to convert miles per imperial gallon (mpg) into kilometers per liter (kpl).
+    public static String[] digitize(String s) {
+        s = s.trim();
+        s = s.replaceAll("\s+", " ");
+        int count = 0;
 
-Create an application that will display the number of kilometers per liter (output) based on the number of miles per imperial gallon (input).
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') count++;
+        }
 
-Make sure to round off the result to two decimal points.
+        String[] array = new String[count + 1];
+        int j = 0;
+        String news = "";
 
-Some useful associations relevant to this kata:
-
-1 Imperial Gallon = 4.54609188 litres
-1 Mile = 1.609344 kilometres
-    */
-
-
-    public static double mpgToKPM(int mpg) {
-        double l = 1.609344;
-        double km = 4.54609188;
-        double kpm = mpg * l / km;
-        return Math.round(kpm * 100.0) / 100.0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != ' ') {
+                news += s.charAt(i);
+            } else {
+                array[j++] = news;
+                news = "";
+            }
+        }
+        array[j] = news;
+        return array;
     }
 }
+
